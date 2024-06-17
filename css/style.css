@@ -141,7 +141,7 @@ header button.on .mcl {
   background-color: var(--point-color-red);
   color: #fff;
   position: fixed;
-  top: 85px;
+  top: 83px;
   right: -36%;
   z-index: 15;
   transition: right 0.5s linear;
@@ -152,7 +152,7 @@ header button.on .mcl {
 }
 
 #mbar.scdown {
-  top: 74px;
+  top: 72px;
   box-shadow: -2px 5px 5px var(--text-color-green);
 }
 

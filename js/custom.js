@@ -1,24 +1,67 @@
-// header 스크롤 다운
-
 let head = document.querySelector("header");
 let mbar = document.querySelector("#mbar");
 let visual = document.querySelector("#visual");
 
+let brands = document.querySelector("#brand");
+let brand = document.querySelectorAll("#brand ul li");
+let news = document.querySelector("#new");
+
+// 스크롤 다운 시
 window.addEventListener("scroll", () => {
+  //  현재 스크롤 위치
   let sc = document.documentElement.scrollTop;
-  //   console.log(sc);  현재 스크롤 위치
 
-  let hScon = visual.offsetTop;
-  //   console.log(hScon);  visual 위 위치
+  // 스크롤 다운 헤더
+  let vScon = visual.offsetTop;
 
-  if (hScon < sc) {
+  if (vScon < sc) {
     head.classList.add("scdown");
     mbar.classList.add("scdown");
   } else {
     head.classList.remove("scdown");
     mbar.classList.remove("scdown");
   }
+
+  //#brand transition
+
+  let bIs = document.querySelectorAll(".bImg");
+
+  const bIh0 = bIs[0].clientHeight / 2;
+  // 브랜드 이미지1 높이
+  const bIh1 = bIs[1].clientHeight;
+  // 브랜드 이미지1 높이
+  const bIh2 = bIs[2].clientHeight;
+  // 브랜드 이미지1 높이
+
+  let bsScon = brands.offsetTop - bIh0;
+  let b1Scon = brand[1].offsetTop - bIh1;
+  let b2Scon = brand[2].offsetTop - bIh2;
+
+  let nScon = news.offsetTop;
+
+  if (bsScon < sc && sc < nScon) {
+    if (bsScon < sc && sc < b1Scon) {
+      brand[0].classList.add("scon");
+    }
+    if (b1Scon < sc && sc < b2Scon) {
+      brand[1].classList.add("scon");
+    }
+    if (b2Scon < sc) {
+      brand[2].classList.add("scon");
+    }
+  } else {
+    for (i of brand) {
+      i.classList.remove("scon");
+    }
+  }
 });
+
+// 창 크기 변경시 스크롤 0
+let scTop = () => {
+  document.documentElement.scrollTop = 0;
+};
+
+window.addEventListener("resize", scTop);
 
 // mbar
 let mbutton = document.querySelector("header button");
@@ -44,15 +87,42 @@ const checkw = () => {
   }
 };
 
-// 화면 로드/크기 변경 시 실행
+// 화면 로드/크기 변경 시 실행 너비 체크
 window.addEventListener("DOMContentLoaded", checkw);
 window.addEventListener("resize", checkw);
 
 // visual
-let slide = document.querySelectorAll("#visual li");
+let slide = document.querySelectorAll(".vi li");
+let snav = document.querySelectorAll(".vinav li");
 
 let pageT = slide.length;
 let p = 0;
+
+let son = () => {
+  for (i of slide) {
+    i.classList.remove("on");
+  }
+
+  slide[p].classList.add("on");
+
+  for (i of snav) {
+    i.classList.remove("on");
+  }
+
+  snav[p].classList.add("on");
+};
+
+let sstart = () => {
+  timer = setInterval(() => {
+    if (p == pageT - 1) {
+      p = 0;
+    } else {
+      p++;
+    }
+
+    son();
+  }, 2500);
+};
 
 let timer = setInterval(() => {
   if (p == pageT - 1) {
@@ -61,19 +131,27 @@ let timer = setInterval(() => {
     p++;
   }
 
-  for (i of slide) {
-    i.classList.remove("on");
-  }
-
-  slide[p].classList.add("on");
+  son();
 }, 2500);
 
-//brand img hover
+snav.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    clearInterval(timer);
 
-let brand = document.querySelectorAll("#brand ul li");
-let bI = document.querySelectorAll(".bImg");
+    p = index;
+    son();
 
-bI.forEach((item, index) => {
+    sstart();
+  });
+});
+
+//brand 이미지 hover
+
+brand = document.querySelectorAll("#brand ul li");
+
+bIs = document.querySelectorAll(".bImg");
+
+bIs.forEach((item, index) => {
   item.addEventListener("mouseenter", () => {
     brand[index].classList.add("on");
   });

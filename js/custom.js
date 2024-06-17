@@ -11,6 +11,7 @@ let best = document.querySelector("#best");
 window.addEventListener("scroll", () => {
   //  현재 스크롤 위치
   let sc = document.documentElement.scrollTop;
+  // console.log(sc);
 
   // 스크롤 다운 헤더
   let vScon = visual.offsetTop;
@@ -28,20 +29,19 @@ window.addEventListener("scroll", () => {
 
   const bIh0 = bIs[0].clientHeight;
 
-  let bsScon = brands.offsetTop - bIh0;
-  let b1Scon = brand[1].offsetTop - bIh0;
-  let b2Scon = brand[2].offsetTop - bIh0;
-
+  let bsScon = brands.offsetTop - bIh0 / 2;
+  let b1Scon = brand[0].offsetTop;
+  let b2Scon = brand[1].offsetTop - bIh0 / 3;
   let nScon = news.offsetTop;
 
-  if (bsScon < sc && sc < nScon) {
-    if (bsScon < sc && sc < b1Scon) {
+  if (vScon <= sc && sc <= nScon) {
+    if (bsScon <= sc && sc < b1Scon + bIh0 / 3) {
       brand[0].classList.add("scon");
     }
-    if (b1Scon < sc && sc < b2Scon) {
+    if (b1Scon <= sc && sc < b2Scon + bIh0 / 3) {
       brand[1].classList.add("scon");
     }
-    if (b2Scon < sc) {
+    if (b2Scon <= sc) {
       brand[2].classList.add("scon");
     }
   } else {

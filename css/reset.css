@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: "NanumSquareRound";
+  cursor: pointer;
+}
+
+body {
+  /* font-family: "NanumSquareRoundLight"; */
+  font-family: "NanumSquareRound";
+  /* font-family: "NanumSquareRoundBold";
+  font-family: "NanumSquareRoundExtraBold"; */
+  color: #222;
+  overflow-x: hidden;
+}
+
+html {
+  /* 컬러 */
+  --text-color-green: #0d342f;
+  --text-color-dred: #3f0104;
+  --point-color-red: #d63333;
+  --point-color-pink: #d93644;
+  --point-color-yellow: #f2b705;
+  --bg-color-white: #f2f2f2;
+}

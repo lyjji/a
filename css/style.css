@@ -276,20 +276,38 @@ header button.on .mcl {
   object-position: center center;
 }
 
+#visual .vi li p {
+  margin: 6%;
+  font-size: 55px;
+  line-height: 65px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#visual .vi li:nth-child(2) p {
+  color: #fff;
+  text-shadow: 0px 0px 15px #000;
+}
+
+#visual .vi li p span {
+  font-weight: bold;
+}
+
 #visual .vinav {
   display: flex;
   justify-content: center;
-  gap: 10%;
+  gap: 12.5%;
   position: absolute;
   left: 50%;
-  bottom: 15px;
+  bottom: 1.5vh;
   transform: translateX(-50%);
 }
 
 #visual .vinav li {
-  width: 5vw;
+  width: 4.5vw;
   height: 5px;
-  background-color: orange;
+  background-color: orangered;
   /* box-shadow: 0px 0px 5px #fff; */
   cursor: pointer;
   opacity: 0.5;
@@ -305,9 +323,10 @@ section {
   padding: 0 50px;
   box-sizing: border-box;
   width: 100%;
+  overflow: hidden;
 }
 
-h2 {
+section h2 {
   margin-bottom: 80px;
   font-family: "Roboto Slab", serif;
   color: var(--text-color-green);
@@ -327,7 +346,7 @@ h2 {
 }
 
 #brand ul li.scon {
-  transform: translateX(0);
+  transform: translateX(0%);
 }
 
 #brand li:nth-child(1) {
@@ -548,6 +567,20 @@ h2 {
   max-width: 510px;
   max-height: 510px;
   position: relative;
+  transition: transform 0.5s;
+}
+
+#best.scon ul li {
+  transform: translatey(0px);
+}
+
+#best ul li {
+  transform: translatey(50%);
+}
+
+#best ul li:nth-child(4),
+#best ul li:nth-child(5) {
+  transition-delay: 0.3s;
 }
 
 #best ul li img {
@@ -597,6 +630,15 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 2.5%;
+  opacity: 0;
+  transform: translatey(100%);
+  transition: opacity 0.5s;
+  transition-delay: 1s;
+}
+
+#best.scon button {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 #best button:hover {
@@ -864,7 +906,13 @@ footer div a:hover img {
   }
 
   #visual .vi li img {
-    object-position: center left;
+    object-position: center right;
+  }
+
+  #visual .vi li p {
+    margin: 5%;
+    font-size: 40px;
+    line-height: 45px;
   }
 
   /* section */
@@ -873,7 +921,7 @@ footer div a:hover img {
     padding: 0 30px;
   }
 
-  h2 {
+  section h2 {
     margin-bottom: 60px;
     font-size: 38px;
   }
@@ -1101,7 +1149,7 @@ footer div a:hover img {
   #visual {
     margin-top: 84px;
     padding: 0 10px;
-    height: 40vh;
+    height: 45vh;
   }
 
   #visual .vi li {
@@ -1122,15 +1170,28 @@ footer div a:hover img {
     }
   }
 
+  #visual .vi li img {
+    object-position: right center;
+  }
+
+  #visual .vi li p {
+    margin: 5%;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  #visual .vinav li {
+    height: 3px;
+  }
+
   /* section */
   section {
     margin-top: 60px;
     padding: 0 15px;
   }
 
-  h2 {
+  section h2 {
     margin-bottom: 40px;
-    font-size: 30px;
+    font-size: 35px;
   }
 
   /* brand */
@@ -1188,11 +1249,11 @@ footer div a:hover img {
   #new .nbox {
     margin: 0 auto;
     width: 85vw;
-    height: calc(85vw + 25vh);
+    height: calc(85vw + 27vh);
   }
 
   #new .nbox li a {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
     justify-content: start;
     box-sizing: border-box;
   }
@@ -1449,6 +1510,13 @@ footer div a:hover img {
   #brand li > div p {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  #visual .vi li p {
+    margin: 8%;
+    font-size: 25px;
+    text-shadow: 0px 0px 2px #fff;
+    line-height: 30px;
   }
 }
 

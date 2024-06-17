@@ -5,6 +5,7 @@ let visual = document.querySelector("#visual");
 let brands = document.querySelector("#brand");
 let brand = document.querySelectorAll("#brand ul li");
 let news = document.querySelector("#new");
+let best = document.querySelector("#best");
 
 // 스크롤 다운 시
 window.addEventListener("scroll", () => {
@@ -22,20 +23,14 @@ window.addEventListener("scroll", () => {
     mbar.classList.remove("scdown");
   }
 
-  //#brand transition
-
+  //브랜드 transition
   let bIs = document.querySelectorAll(".bImg");
 
-  const bIh0 = bIs[0].clientHeight / 2;
-  // 브랜드 이미지1 높이
-  const bIh1 = bIs[1].clientHeight;
-  // 브랜드 이미지1 높이
-  const bIh2 = bIs[2].clientHeight;
-  // 브랜드 이미지1 높이
+  const bIh0 = bIs[0].clientHeight;
 
   let bsScon = brands.offsetTop - bIh0;
-  let b1Scon = brand[1].offsetTop - bIh1;
-  let b2Scon = brand[2].offsetTop - bIh2;
+  let b1Scon = brand[1].offsetTop - bIh0;
+  let b2Scon = brand[2].offsetTop - bIh0;
 
   let nScon = news.offsetTop;
 
@@ -54,14 +49,34 @@ window.addEventListener("scroll", () => {
       i.classList.remove("scon");
     }
   }
+
+  // 베스트 transition
+
+  let bests = best.offsetTop - 550;
+  if (sc >= bests) {
+    best.classList.add("scon");
+  } else {
+    best.classList.remove("scon");
+  }
 });
 
-// 창 크기 변경시 스크롤 0
+// width 768px 초과일 때 mbar에 .on 지우기
+const checkw = () => {
+  if (window.innerWidth > 768) {
+    mbutton.classList.remove("on");
+    mbar.classList.remove("on");
+  }
+};
+
+// 창 크기 변경시 스크롤 0 + 너비 체크
 let scTop = () => {
   document.documentElement.scrollTop = 0;
 };
 
-window.addEventListener("resize", scTop);
+window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("resize", scTop);
+  window.addEventListener("resize", checkw);
+});
 
 // mbar
 let mbutton = document.querySelector("header button");
@@ -78,18 +93,6 @@ mbclose.addEventListener("click", () => {
   mbutton.classList.remove("on");
   mbar.classList.remove("on");
 });
-
-// width 768px 초과일 때 mbar에 .on 지우기
-const checkw = () => {
-  if (window.innerWidth >= 768) {
-    mbutton.classList.remove("on");
-    mbar.classList.remove("on");
-  }
-};
-
-// 화면 로드/크기 변경 시 실행 너비 체크
-window.addEventListener("DOMContentLoaded", checkw);
-window.addEventListener("resize", checkw);
 
 // visual
 let slide = document.querySelectorAll(".vi li");

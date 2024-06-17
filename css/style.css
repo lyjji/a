@@ -46,6 +46,8 @@ header.scdown ul {
 }
 
 header ul li:hover {
+  color: var(--point-color-yellow);
+  text-shadow: 0px 0px 2px #fff;
   font-weight: bold;
 }
 
@@ -510,7 +512,7 @@ section h2 {
   height: 25px;
   line-height: 25px;
   background-color: #fff;
-  border: 1px solid #0d342f;
+  border: 1px solid var(--text-color-green);
   border-radius: 50%;
   text-align: center;
   color: var(--text-color-green);

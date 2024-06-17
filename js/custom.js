@@ -73,10 +73,8 @@ let scTop = () => {
   document.documentElement.scrollTop = 0;
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  window.addEventListener("resize", scTop);
-  window.addEventListener("resize", checkw);
-});
+window.addEventListener("resize", scTop);
+window.addEventListener("resize", checkw);
 
 // mbar
 let mbutton = document.querySelector("header button");

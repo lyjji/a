@@ -1,189 +1,5 @@
 @charset "utf-8";
 
-/* header */
-header {
-  padding: 10px 50px;
-  box-sizing: border-box;
-  width: 100%;
-  background-color: #ffffffc9;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 15;
-}
-
-header.scdown {
-  box-shadow: 0px 0px 10px #ccc;
-}
-
-header > a {
-  display: block;
-  width: 130px;
-}
-
-header.scdown > a {
-  width: 100px;
-}
-
-header > a img {
-  width: 100%;
-  object-fit: cover;
-}
-
-header ul {
-  font-size: 20px;
-  color: var(--text-color-green);
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-header.scdown ul {
-  font-size: 18px;
-}
-
-header ul li:hover {
-  color: var(--point-color-yellow);
-  text-shadow: 0px 0px 2px #fff;
-  font-weight: bold;
-}
-
-header ul li:last-child {
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: var(--point-color-red);
-  border: 1px solid var(--point-color-red);
-  border-radius: 5px;
-  font-size: 18px;
-  color: #fff;
-}
-
-header.scdown ul li:last-child {
-  font-size: 14px;
-}
-
-header ul li:last-child:hover {
-  background-color: #fff;
-  color: var(--point-color-red);
-}
-
-header button {
-  margin: 0 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 28px;
-  color: var(--point-color-red);
-  cursor: pointer;
-}
-
-header.scdown button {
-  font-size: 25px;
-}
-
-header button.on .mop {
-  display: none;
-}
-
-header button .mop:hover {
-  animation: rotate 1s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    rotate: -45deg;
-  }
-  50% {
-    rotate: 45deg;
-  }
-
-  100% {
-    rotate: -45deg;
-  }
-}
-
-header button .mcl {
-  display: none;
-}
-
-header button .mcl:hover {
-  opacity: 0.8;
-}
-
-header button .mcl {
-  animation: show 1s;
-}
-
-@keyframes show {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-header button.on .mcl {
-  display: block;
-}
-
-/* mbar */
-#mbar {
-  width: 35%;
-  height: 100vh;
-  background-color: var(--point-color-red);
-  color: #fff;
-  position: fixed;
-  top: 83px;
-  right: -36%;
-  z-index: 15;
-  transition: right 0.5s linear;
-}
-
-#mbar.on {
-  right: 0;
-}
-
-#mbar.scdown {
-  top: 72px;
-  box-shadow: -2px 5px 5px var(--text-color-green);
-}
-
-#mbar li {
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-#mbar li a {
-  display: flex;
-  padding: 20px 0;
-  width: 100%;
-  justify-content: space-between;
-  letter-spacing: 1px;
-  font-size: 18px;
-}
-
-#mbar li:not(:first-child):hover a {
-  font-weight: bold;
-}
-
-#mbar li a img {
-  margin: 0 auto;
-  width: 50%;
-}
-
 /* visual */
 #visual {
   margin-top: 100px;
@@ -275,35 +91,18 @@ header button.on .mcl {
   width: 4.5vw;
   height: 5px;
   background-color: var(--point-color-yellow);
-  /* box-shadow: 0px 0px 5px #fff; */
   cursor: pointer;
   opacity: 0.5;
 }
 
 #visual .vinav li.on {
   opacity: 1;
-}
-
-/* section */
-section {
-  margin-top: 150px;
-  padding: 0 50px;
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
-}
-
-section h2 {
-  margin-bottom: 80px;
-  font-family: "Roboto Slab", serif;
-  color: var(--text-color-green);
-  text-align: center;
-  font-size: 50px;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 2px #ccc;
+  filter: brightness(1.1);
+  box-shadow: 0px 0px 5px #fff;
 }
 
 /* brand */
+
 #brand ul li {
   display: flex;
   gap: 7.5%;
@@ -397,6 +196,7 @@ section h2 {
 }
 
 /* new */
+
 #new .nbox {
   width: 100%;
   position: relative;
@@ -520,6 +320,11 @@ section h2 {
 }
 
 /* best */
+#best h2 {
+  padding-bottom: 3vh;
+  border-bottom: 3px solid var(--point-color-yellow);
+}
+
 #best ul {
   display: flex;
   flex-wrap: wrap;
@@ -739,69 +544,10 @@ section h2 {
   }
 }
 
-/* footer */
-footer {
-  width: 100%;
-  padding: 20px 50px;
-  box-sizing: border-box;
-  background-color: var(--text-color-green);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-footer address {
-  padding: 0 10%;
-  box-sizing: border-box;
-  width: calc(90% - 180px);
-  font-size: 14px;
-  line-height: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-footer address span {
-  margin-right: 15px;
-}
-
-footer > a img {
-  width: 180px;
-}
-
-footer div {
-  width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-footer div a {
-  display: block;
-  width: 30%;
-}
-
-footer div a img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  object-fit: cover;
-  filter: grayscale(0.8);
-}
-
-footer div a:hover img {
-  filter: grayscale(0);
-}
-
 /* 반응형 */
 
 /* ------------------pc-------------------*/
 @media (min-width: 1200px) {
-  header button {
-    display: none;
-  }
-
   #new .nbox {
     height: 45vh;
   }
@@ -813,42 +559,6 @@ footer div a:hover img {
 
 /* ------------------tap-------------------*/
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* header */
-
-  header {
-    padding: 10px 30px;
-  }
-
-  header.scdown {
-    box-shadow: 0px 0px 8px #ccc;
-  }
-
-  header > a {
-    width: 110px;
-  }
-
-  header.scdown > a {
-    width: 90px;
-  }
-
-  header ul {
-    font-size: 18px;
-    gap: 35px;
-  }
-
-  header.scdown ul {
-    font-size: 16px;
-  }
-
-  header ul li:last-child {
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  header button {
-    display: none;
-  }
-
   /* visual */
   #visual {
     margin-top: 88px;
@@ -880,17 +590,6 @@ footer div a:hover img {
     margin: 5%;
     font-size: 40px;
     line-height: 45px;
-  }
-
-  /* section */
-  section {
-    margin-top: 100px;
-    padding: 0 30px;
-  }
-
-  section h2 {
-    margin-bottom: 60px;
-    font-size: 38px;
   }
 
   /* brand */
@@ -1062,56 +761,9 @@ footer div a:hover img {
   #notice #rol2 {
     animation: ro2 15s linear infinite;
   }
-
-  /* footer */
-  footer {
-    padding: 20px 30px;
-  }
-
-  footer > address {
-    padding: 0 3%;
-    width: calc(85% - 150px);
-    font-size: 12px;
-    flex-wrap: wrap;
-  }
-
-  footer > a img {
-    width: 150px;
-  }
-
-  footer div {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
 /* ------------------mobile-------------------*/
 @media (max-width: 768px) {
-  /* header */
-  header {
-    padding: 15px 15px;
-    background-color: #fff;
-  }
-
-  header.scdown {
-    box-shadow: 0px 0px 5px #ccc;
-  }
-
-  header > a {
-    width: 85px;
-  }
-
-  header.scdown > a {
-    width: 65px;
-  }
-
-  header ul {
-    display: none;
-  }
-
-  /* js로 window 다른 반응형일 때 mbar.on 달게 하기 */
-
   /* visual */
   #visual {
     margin-top: 84px;
@@ -1148,17 +800,6 @@ footer div a:hover img {
   }
   #visual .vinav li {
     height: 3px;
-  }
-
-  /* section */
-  section {
-    margin-top: 60px;
-    padding: 0 15px;
-  }
-
-  section h2 {
-    margin-bottom: 40px;
-    font-size: 35px;
   }
 
   /* brand */
@@ -1403,67 +1044,12 @@ footer div a:hover img {
   #notice #rol2 {
     animation: ro2 12s linear infinite;
   }
-
-  /* footer */
-  footer {
-    width: 100%;
-    padding: 15px 15px;
-    box-sizing: border-box;
-  }
-
-  footer address {
-    padding: 0 1%;
-    box-sizing: border-box;
-    width: calc(90% - 100px);
-    font-size: 10px;
-    line-height: 13px;
-  }
-
-  footer address span {
-    margin-right: 10px;
-  }
-
-  footer > a img {
-    width: 100px;
-  }
-
-  footer div {
-    width: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  footer div a {
-    display: block;
-    width: 30%;
-  }
-
-  footer div a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(0.8);
-  }
-
-  footer div a:hover img {
-    filter: grayscale(0);
-  }
 }
 
 /* w615 */
 @media (max-width: 615px) {
   #brand li > div p span {
     display: none;
-  }
-
-  footer div {
-    gap: 5%;
-    flex-wrap: wrap;
-  }
-
-  footer div a {
-    width: 45%;
   }
 }
 
@@ -1506,34 +1092,6 @@ footer div a:hover img {
     font-size: 12px;
     line-height: 16px;
   }
-
-  footer {
-    display: block;
-    text-align: center;
-  }
-
-  footer address {
-    display: block;
-    margin: 5px 0;
-    width: 90%;
-    font-size: 10px;
-  }
-
-  footer > a img {
-    width: 90%;
-  }
-
-  footer div {
-    margin: 0 auto;
-    width: 90%;
-    justify-content: center;
-    gap: 5%;
-  }
-
-  footer div a {
-    display: block;
-    width: 20%;
-  }
 }
 
 /* w385 */
@@ -1541,7 +1099,11 @@ footer div a:hover img {
   #new .nbox {
     margin: 0 auto;
     width: 85vw;
-    height: calc(85vw + 17vh);
+    height: calc(85vw + 20vh);
+  }
+
+  #new .nbox li a div {
+    height: 20vh;
   }
 
   #new .nbox li a div h3 {

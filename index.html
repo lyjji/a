@@ -6,14 +6,18 @@
     <title>댄싱사이더</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- 폰트 -->
     <link
       href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
       rel="stylesheet"
     />
-    <!-- 폰트 -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poetsen+One&display=swap"
       rel="stylesheet"
     />
     <!-- 폰트어썸 -->
@@ -28,15 +32,15 @@
 
   <body>
     <header>
-      <a href="#">
+      <a href="index.html">
         <img src="img/h_logo.png" alt="h_logo" />
       </a>
 
       <ul>
-        <li><a href="#">브랜드</a></li>
-        <li><a href="#">메뉴</a></li>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="brand.html">브랜드</a></li>
+        <li><a href="menu.html">메뉴</a></li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
       <button>
         <i class="fa-solid fa-wine-glass-empty mop"></i
@@ -51,16 +55,20 @@
         </a>
       </li>
       <li>
-        <a href="#">브랜드<i class="fa-solid fa-angle-right"></i></a>
+        <a href="brand.html">브랜드<i class="fa-solid fa-angle-right"></i></a>
       </li>
       <li>
-        <a href="#">메뉴<i class="fa-solid fa-angle-right"></i></a>
+        <a href="menu.html">메뉴<i class="fa-solid fa-angle-right"></i></a>
       </li>
       <li>
-        <a href="#">공지사항<i class="fa-solid fa-angle-right"></i></a>
+        <a href="notice.html"
+          >공지사항<i class="fa-solid fa-angle-right"></i
+        ></a>
       </li>
       <li>
-        <a href="#">contact<i class="fa-solid fa-angle-right"></i></a>
+        <a href="contact.html"
+          >contact<i class="fa-solid fa-angle-right"></i
+        ></a>
       </li>
     </ul>
 
@@ -100,6 +108,7 @@
         <li></li>
       </ul>
     </div>
+
     <section id="brand">
       <h2>Brand</h2>
       <ul>
@@ -305,17 +314,24 @@
     </section>
 
     <footer>
-      <a href="#"><img src="img/f_logo.png" alt="f_logo" /></a>
-      <address>
-        <span>주식회사 비전레드 대표 : 이대로</span>
-        <span>대표전화 : 043-844-1616</span>
-        <span>납품문의: 02-719-1616</span>
-        <span>사업자등록번호 : 205-87-01212</span>
-        <span>주소 : 27447 충청북도 충주시 중앙탑면 인담길 35-1</span>
-        <span>통신판매업신고 : 제2019-충북충주-218호</span>
-        <span>이메일 : cs@dancingcider.com</span>
-      </address>
-      <div>
+      <a href="index.html"><img src="img/f_logo.png" alt="f_logo" /></a>
+      <div class="adrp">
+        <h4>
+          댄싱사이더 컴퍼니 <i class="fa-solid fa-chevron-down"></i
+          ><i class="fa-solid fa-chevron-up"></i>
+        </h4>
+        <address>
+          <span>주식회사 비전레드 대표 : 이대로</span>
+          <span>대표전화 : 043-844-1616</span>
+          <span>납품문의 : 02-719-1616</span>
+          <span>사업자등록번호 : 205-87-01212</span>
+          <span>주소 : 27447 충청북도 충주시 중앙탑면 인담길 35-1</span>
+          <span>통신판매업신고 : 제2019-충북충주-218호</span>
+          <span>이메일 : cs@dancingcider.com</span>
+        </address>
+      </div>
+
+      <div class="fsns">
         <a
           href="https://youtube.com/@user-fb3hc8wc9e?si=s38npi-y_dvBOVZV"
           target="_blank"
@@ -334,6 +350,7 @@
       </div>
     </footer>
 
+    <script src="js/common.js"></script>
     <script src="js/custom.js"></script>
   </body>
 </html>

@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+/* visual */
+#visual {
+  position: relative;
+}
+
+#visual:hover img {
+  filter: grayscale(0);
+}
+
+#visual img {
+  width: 100%;
+  filter: grayscale(0.4);
+}
+
+#visual div {
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 2px var(--text-color-dred);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#visual div h2 {
+  font-size: 45px;
+  margin-bottom: 30px;
+}
+
+#visual div p {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* what is cider */
+#wcider {
+  margin-top: 250px;
+  overflow: visible;
+}
+
+#wcider ul {
+  border-top: 3px solid var(--point-color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 5;
+}
+
+#wcider ul li:first-child {
+  width: 50%;
+  color: var(--point-color-yellow);
+  letter-spacing: 1px;
+}
+
+#wcider ul li:last-child {
+  width: 30%;
+}
+
+#wcider ul li img {
+  margin-top: -25%;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px var(--point-color-pink);
+  position: relative;
+  z-index: 15;
+}
+
+#wcider ul li img:hover {
+  filter: brightness(1.1);
+}
+
+#wcider ul li h3 {
+  margin-bottom: 15%;
+  font-size: 45px;
+  text-shadow: 2px 2px 5px #f5c944;
+}
+
+#wcider ul li h4 {
+  text-align: right;
+  font-size: 35px;
+  text-shadow: -2px 2px 5px #f5c944;
+}
+
+#wcider p {
+  margin-top: 30px;
+  padding: 5%;
+  border-bottom: 3px solid var(--point-color-yellow);
+  font-size: 20px;
+  line-height: 35px;
+  color: var(--text-color-green);
+}
+
+/* dancing cider company */
+#dcco h2 {
+  color: var(--text-color-dred);
+  text-transform: uppercase;
+}
+
+#dcco .logos {
+  margin-bottom: 80px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+#dcco .logos .glogo {
+  height: 90%;
+}
+
+#dcco .logos img {
+  padding: 15px;
+  box-sizing: border-box;
+  height: 100%;
+  box-shadow: 0px 0px 5px #ccc;
+}
+
+#dcco p {
+  margin: 50px auto;
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+#dcco .dcimg {
+  margin: 150px auto 100px;
+  width: 65%;
+  height: 73vh;
+  position: relative;
+  z-index: 5;
+}
+
+#dcco .dcimg .br {
+  width: 65%;
+  height: 120%;
+  border: 3px solid var(--point-color-red);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dcco .dcimg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* how to enjoy */
+#hte {
+  margin-bottom: 150px;
+  text-align: right;
+  overflow: visible;
+}
+
+#hte .enjoy {
+  margin: 150px auto;
+  padding: 30px;
+  width: 80%;
+  border-top: 3px solid var(--point-color-yellow);
+  border-bottom: 3px solid var(--point-color-yellow);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#hte .enjoy li {
+  width: 30%;
+}
+
+#hte .enjoy li h3 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+#hte .enjoy li:nth-child(1) h3 i {
+  margin-left: 10px;
+  color: aqua;
+  text-shadow: 1px 1px 1px darkblue;
+  font-size: 60px;
+}
+
+#hte .enjoy li:nth-child(2) h3 i {
+  margin-left: 10px;
+  color: var(--point-color-red);
+  text-shadow: 1px 1px 1px var(--text-color-dred);
+  font-size: 60px;
+}
+
+#hte .enjoy li:nth-child(3) {
+  margin-top: -10%;
+}
+
+#hte .enjoy li img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#hte > h3 {
+  margin: 0 auto;
+  padding: 15px 0;
+  width: 300px;
+  border-top: 10px double var(--point-color-red);
+  border-bottom: 10px double var(--point-color-red);
+  border-radius: 15px;
+  font-size: 30px;
+  color: var(--text-color-dred);
+  text-align: center;
+}
+
+#hte > h3 i {
+  color: #aaa;
+  text-shadow: 0px 0px 1px #555;
+}
+
+#hte > h3 span {
+  margin: 0 6px;
+}
+
+#hte .foodp {
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+#hte .foodp > li {
+  width: 45%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+#hte .foodp > li:first-child {
+  border: 3px solid var(--point-color-yellow);
+}
+
+#hte .foodp > li:last-child {
+  border: 3px solid var(--text-color-green);
+}
+
+#hte .foodp > li h4 {
+  padding: 15px 0;
+  font-size: 25px;
+  color: #fff;
+}
+
+#hte .foodp > li:first-child h4 {
+  background-color: var(--point-color-yellow);
+}
+
+#hte .foodp > li:last-child h4 {
+  background-color: var(--text-color-green);
+}
+
+#hte .foodp ul {
+  width: 100%;
+  position: relative;
+}
+
+#hte .foodp ul li {
+  width: 100%;
+  height: 45vh;
+  cursor: pointer;
+}
+
+#hte .foodp ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hte .foodp > li:hover ul li img {
+  opacity: 0.5;
+}
+
+#hte .foodp ul li:last-child {
+  padding: 5%;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  opacity: 0;
+}
+
+#hte .foodp > li:hover ul li:last-child {
+  opacity: 1;
+}
+
+/* 반응형 */
+/* ------------------pc-------------------*/
+@media (min-width: 1200px) {
+}
+
+/* ------------------tap-------------------*/
+@media (min-width: 768px) and (max-width: 1200px) {
+}
+
+/* ------------------mobile-------------------*/
+@media (max-width: 768px) {
+}

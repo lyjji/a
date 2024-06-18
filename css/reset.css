@@ -21,8 +21,8 @@ button {
 }
 
 body {
-  /* font-family: "NanumSquareRoundLight"; */
   font-family: "NanumSquareRound";
+  /* font-family: "NanumSquareRoundLight"; */
   /* font-family: "NanumSquareRoundBold";
   font-family: "NanumSquareRoundExtraBold"; */
   color: #222;
@@ -34,7 +34,535 @@ html {
   --text-color-green: #0d342f;
   --text-color-dred: #3f0104;
   --point-color-red: #d63333;
+  --point-color-bred: #a61103;
   --point-color-pink: #d93644;
+  --point-color-ygreen: #aabf06;
   --point-color-yellow: #f2b705;
   --bg-color-white: #f2f2f2;
+}
+
+/* header */
+header {
+  padding: 10px 50px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ffffffc9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+}
+
+header.scdown {
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+header > a {
+  display: block;
+  width: 130px;
+}
+
+header.scdown > a {
+  width: 100px;
+}
+
+header > a img {
+  width: 100%;
+  object-fit: cover;
+}
+
+header ul {
+  font-size: 20px;
+  color: var(--text-color-green);
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+header.scdown ul {
+  font-size: 18px;
+}
+
+header ul li:hover {
+  color: var(--point-color-yellow);
+  text-shadow: 0px 0px 2px #fff;
+  font-weight: bold;
+}
+
+header ul li:not(:last-child).on {
+  color: var(--point-color-ygreen);
+  font-weight: bold;
+}
+
+header ul li:last-child {
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--point-color-red);
+  border: 1px solid var(--point-color-red);
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+header.scdown ul li:last-child {
+  font-size: 14px;
+}
+
+header ul li:last-child:hover {
+  background-color: #fff;
+  color: var(--point-color-red);
+}
+
+header button {
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  color: var(--point-color-red);
+  cursor: pointer;
+}
+
+header.scdown button {
+  font-size: 25px;
+}
+
+header button.on .mop {
+  display: none;
+}
+
+header button .mop:hover {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: -45deg;
+  }
+  50% {
+    rotate: 45deg;
+  }
+
+  100% {
+    rotate: -45deg;
+  }
+}
+
+header button .mcl {
+  display: none;
+}
+
+header button .mcl:hover {
+  opacity: 0.8;
+}
+
+header button .mcl {
+  animation: show 1s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header button.on .mcl {
+  display: block;
+}
+
+/* visual */
+#visual {
+  margin-top: 100px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* mbar */
+#mbar {
+  width: 35%;
+  height: 100vh;
+  background-color: var(--point-color-red);
+  color: #fff;
+  position: fixed;
+  top: 83px;
+  right: -36%;
+  z-index: 15;
+  transition: right 0.5s linear;
+}
+
+#mbar.on {
+  right: 0;
+}
+
+#mbar.scdown {
+  top: 72px;
+  box-shadow: -2px 5px 5px var(--text-color-green);
+}
+
+#mbar li {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#mbar li a {
+  display: flex;
+  padding: 20px 0;
+  width: 100%;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+#mbar li:not(:first-child):hover a {
+  font-weight: bold;
+}
+
+#mbar li a img {
+  margin: 0 auto;
+  width: 50%;
+}
+
+/* section */
+section {
+  margin-top: 150px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+section h2 {
+  margin-bottom: 80px;
+  font-family: "Poetsen One", NanumSquareRound;
+  color: var(--text-color-green);
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 2px var(--text-color-green);
+}
+
+/* footer */
+footer {
+  width: 100%;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  background-color: var(--text-color-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .adrp {
+  padding: 0 5%;
+  box-sizing: border-box;
+  width: calc(90% - 180px);
+  font-size: 14px;
+  line-height: 25px;
+}
+
+footer .adrp h4 {
+  display: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+footer .adrp h4 i {
+  margin-left: 5px;
+}
+
+footer .adrp h4 .fa-chevron-up {
+  display: none;
+}
+
+footer .adrp.on h4 .fa-chevron-down {
+  display: none;
+}
+
+footer .adrp.on h4 .fa-chevron-up {
+  display: inline-block;
+}
+
+footer .adrp address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .adrp address span {
+  word-break: keep-all;
+  margin-right: 15px;
+}
+
+footer > a img {
+  width: 180px;
+}
+
+footer .fsns {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .fsns a {
+  display: block;
+  width: 30%;
+}
+
+footer .fsns a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  filter: grayscale(0.8);
+}
+
+footer .fsns a:hover img {
+  filter: grayscale(0);
+}
+
+/* 반응형 */
+/* ------------------pc-------------------*/
+@media (min-width: 1200px) {
+  header button {
+    display: none;
+  }
+}
+
+/* ------------------tap-------------------*/
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* header */
+
+  header {
+    padding: 10px 30px;
+  }
+
+  header.scdown {
+    box-shadow: 0px 0px 8px #ccc;
+  }
+
+  header > a {
+    width: 110px;
+  }
+
+  header.scdown > a {
+    width: 90px;
+  }
+
+  header ul {
+    font-size: 18px;
+    gap: 35px;
+  }
+
+  header.scdown ul {
+    font-size: 16px;
+  }
+
+  header ul li:last-child {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  header button {
+    display: none;
+  }
+
+  /* visual */
+  #visual {
+    margin-top: 88px;
+    padding: 0 25px;
+  }
+
+  /* section */
+  section {
+    margin-top: 100px;
+    padding: 0 30px;
+  }
+
+  section h2 {
+    margin-bottom: 60px;
+    font-size: 38px;
+  }
+
+  /* footer */
+  footer {
+    padding: 20px 30px;
+  }
+
+  footer .adrp {
+    padding: 0 4%;
+    width: calc(85% - 150px);
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  footer > a img {
+    width: 150px;
+  }
+
+  footer .fsns {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ------------------mobile-------------------*/
+@media (max-width: 768px) {
+  /* header */
+  header {
+    padding: 15px 15px;
+    background-color: #fff;
+  }
+
+  header.scdown {
+    box-shadow: 0px 0px 5px #ccc;
+  }
+
+  header > a {
+    width: 85px;
+  }
+
+  header.scdown > a {
+    width: 65px;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  /* visual */
+  #visual {
+    margin-top: 84px;
+    padding: 0 10px;
+  }
+
+  /* section */
+  section {
+    margin-top: 60px;
+    padding: 0 15px;
+  }
+
+  section h2 {
+    margin-bottom: 40px;
+    font-size: 35px;
+  }
+
+  /* footer */
+  footer {
+    width: 100%;
+    padding: 15px;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  footer > a img {
+    width: 100px;
+  }
+
+  footer .adrp {
+    padding: 0 3%;
+    box-sizing: border-box;
+    width: calc(80% - 100px);
+  }
+
+  footer .adrp h4 {
+    display: block;
+  }
+
+  footer .adrp address {
+    padding: 10px 0 0;
+    display: none;
+    border-top: 1px solid #fff;
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  footer .adrp.on address {
+    display: block;
+  }
+
+  footer .adrp address span {
+    margin-right: 5px;
+  }
+
+  footer .fsns {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .fsns a {
+    display: block;
+    width: 30%;
+  }
+
+  footer .fsns a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.8);
+  }
+
+  footer .fsns a:hover img {
+    filter: grayscale(0);
+  }
+}
+
+/* w425 */
+@media (max-width: 425px) {
+  footer {
+    display: block;
+    text-align: center;
+  }
+
+  footer > a img {
+    width: 80%;
+  }
+
+  footer .adrp {
+    width: 75%;
+    margin: 10px auto;
+  }
+
+  footer .adrp h4 {
+    font-size: 18px;
+  }
+
+  footer .adrp address {
+    font-size: 10px;
+  }
+
+  footer .fsns {
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+    gap: 5%;
+  }
+
+  footer .fsns a {
+    display: block;
+    width: 15%;
+  }
 }

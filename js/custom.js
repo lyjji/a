@@ -1,7 +1,3 @@
-let head = document.querySelector("header");
-let mbar = document.querySelector("#mbar");
-let visual = document.querySelector("#visual");
-
 let brands = document.querySelector("#brand");
 let brand = document.querySelectorAll("#brand ul li");
 let news = document.querySelector("#new");
@@ -13,18 +9,8 @@ window.addEventListener("scroll", () => {
   let sc = document.documentElement.scrollTop;
   // console.log(sc);
 
-  // 스크롤 다운 헤더
-  let vScon = visual.offsetTop;
-
-  if (vScon < sc) {
-    head.classList.add("scdown");
-    mbar.classList.add("scdown");
-  } else {
-    head.classList.remove("scdown");
-    mbar.classList.remove("scdown");
-  }
-
   //브랜드 transition
+  let vScon = visual.offsetTop;
   let bIs = document.querySelectorAll(".bImg");
 
   const bIh0 = bIs[0].clientHeight;
@@ -60,39 +46,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// width 768px 초과일 때 mbar에 .on 지우기
-const checkw = () => {
-  if (window.innerWidth > 768) {
-    mbutton.classList.remove("on");
-    mbar.classList.remove("on");
-  }
-};
-
-// 창 크기 변경시 스크롤 0 + 너비 체크
-let scTop = () => {
-  document.documentElement.scrollTop = 0;
-};
-
-window.addEventListener("resize", scTop);
-window.addEventListener("resize", checkw);
-
-// mbar
-let mbutton = document.querySelector("header button");
-
-let mbopen = document.querySelector(".mop");
-let mbclose = document.querySelector(".mcl");
-
-mbopen.addEventListener("click", () => {
-  mbutton.classList.add("on");
-  mbar.classList.add("on");
-});
-
-mbclose.addEventListener("click", () => {
-  mbutton.classList.remove("on");
-  mbar.classList.remove("on");
-});
-
-// visual
+// index-visual
 let slide = document.querySelectorAll(".vi li");
 let snav = document.querySelectorAll(".vinav li");
 

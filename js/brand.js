@@ -9,7 +9,7 @@ let hfood = document.querySelector("#hte >h3");
 window.addEventListener("scroll", () => {
   //현재 위치
   let sc = document.documentElement.scrollTop;
-  //console.log(sc)
+  // console.log(sc);
 
   //wcider on
   let vhalf = bvisual.offsetTop / 2;
@@ -21,12 +21,13 @@ window.addEventListener("scroll", () => {
     wcider.classList.remove("scon");
   }
 
-  let whalf = wcider.offsetTop / 2;
+  // dcco h2
+  let wciderT = wcider.offsetTop;
   let dclogoT = dclogo.offsetTop;
   let dcimgT = dccoimg.offsetTop;
-  let hteT = hte.offsetTop;
+  let hteT = hte.offsetTop - 200;
 
-  if (whalf <= sc && sc < dcimgT) {
+  if (wciderT <= sc && sc < dcimgT) {
     dcco.classList.add("scon");
   } else {
     dcco.classList.remove("scon");
@@ -40,7 +41,7 @@ window.addEventListener("scroll", () => {
 
   let foodT = hfood.offsetTop;
 
-  if (dcimgT <= sc && sc < foodT) {
+  if (dcimgT + 200 <= sc) {
     hte.classList.add("scon");
   } else {
     hte.classList.remove("scon");

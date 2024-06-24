@@ -93,7 +93,7 @@ header ul li:hover {
 }
 
 header ul li:not(:last-child).on {
-  color: var(--point-color-ygreen);
+  color: var(--point-color-bred);
   font-weight: bold;
 }
 

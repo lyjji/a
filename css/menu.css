@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* visual */
+#visual {
+  position: relative;
+}
+
+#visual img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#visual h2 {
+  margin: 0 5%;
+  color: #fff;
+  font-size: 45px;
+  line-height: 55px;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 2px var(--text-color-green);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 반응형 */
+/* ------------------pc-------------------*/
+@media (min-width: 1200px) {
+}
+
+/* ------------------tap-------------------*/
+@media (min-width: 768px) and (max-width: 1200px) {
+}
+
+/* ------------------mobile-------------------*/
+@media (max-width: 768px) {
+}

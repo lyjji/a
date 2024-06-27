@@ -308,6 +308,7 @@ footer .adrp address {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: justify;
 }
 
 footer .adrp address span {
@@ -317,6 +318,11 @@ footer .adrp address span {
 
 footer > a img {
   width: 180px;
+  filter: brightness(0.8);
+}
+
+footer > a img:hover {
+  filter: brightness(1);
 }
 
 footer .fsns {
@@ -536,21 +542,22 @@ footer .fsns a:hover img {
 /* w425 */
 @media (max-width: 425px) {
   footer {
-    display: block;
+    padding: 3%;
     text-align: center;
   }
 
   footer > a img {
-    width: 80%;
+    display: none;
+    width: 50%;
   }
 
   footer .adrp {
-    width: 75%;
-    margin: 10px auto;
+    width: 70%;
+    /* margin: 15px auto 0; */
   }
 
   footer .adrp h4 {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   footer .adrp address {
@@ -559,13 +566,14 @@ footer .fsns a:hover img {
 
   footer .fsns {
     margin: 0 auto;
-    width: 80%;
+    width: 30%;
+    align-items: center;
     justify-content: center;
     gap: 5%;
   }
 
   footer .fsns a {
     display: block;
-    width: 15%;
+    width: 100%;
   }
 }

@@ -1,10 +1,45 @@
 @charset "utf-8";
+
 /* visual */
-#visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#visual {
+  height: 55vh;
+  overflow: hidden;
 }
+
+#visual a {
+  height: 100%;
+  background-color: var(--text-color-green);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+}
+
+#visual img {
+  width: 30%;
+  object-fit: cover;
+  animation: nvi 0.8s linear;
+}
+
+@keyframes nvi {
+  0% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* section */
 section h2 {
   margin-bottom: 20px;
@@ -14,6 +49,7 @@ section h2 {
 
 section > p {
   color: var(--text-color-dred);
+  font-size: 18px;
   text-align: center;
   font-weight: bold;
 }
@@ -33,10 +69,10 @@ section > p {
 #notices > ul > li:first-child {
   position: relative;
   top: 3%;
-  /* transform: translateY(-50%); */
   z-index: 6;
 }
 
+/* 뒤 박스 */
 #notices > ul > li:last-child {
   width: 90%;
   height: 100%;
@@ -49,6 +85,14 @@ section > p {
 }
 
 #notices ul li .news li {
+  transition: transform 0.6s;
+}
+
+#notices ul li .news li:hover {
+  box-shadow: 0px 0px 5px var(--text-color-green);
+}
+
+#notices ul li .news li a {
   height: 400px;
   color: #fff;
   display: flex;
@@ -56,29 +100,54 @@ section > p {
   justify-content: center;
 }
 
+#notices ul li .news li:nth-child(2) a {
+  flex-direction: row-reverse;
+}
+
+#notices.scon ul li .news li {
+  transform: translateX(0%) !important;
+}
+
 #notices ul li .news li:nth-child(1) {
   background-color: rgb(204, 0, 0, 80%);
+  transform: translateX(-100%);
+  transition-delay: 0s;
 }
 
 #notices ul li .news li:nth-child(2) {
   margin: 3% 0;
-  flex-direction: row-reverse;
   background-color: rgb(242, 183, 5, 80%);
+  transform: translateX(100%);
+  transition-delay: 0.4s;
 }
 
 #notices ul li .news li:nth-child(3) {
   background-color: rgb(13, 52, 47, 80%);
+  transform: translateX(-100%);
+  transition-delay: 0.8s;
+}
+
+#notices ul li .news li:nth-child(1):hover {
+  background-color: var(--point-color-red);
+}
+
+#notices ul li .news li:nth-child(2):hover {
+  background-color: var(--point-color-yellow);
+}
+
+#notices ul li .news li:nth-child(3):hover {
+  background-color: var(--text-color-green);
 }
 
 #notices ul li .news li div {
   width: 70%;
   padding: 0 5%;
   box-sizing: border-box;
-  text-align-last: left;
+  text-align: left;
 }
 
 #notices ul li .news li div h3 {
-  margin-bottom: 10x;
+  margin-bottom: 10px;
   font-size: 30px;
   text-shadow: 0px 0px 2px var(--text-color-green);
 }
@@ -99,7 +168,12 @@ section > p {
   background-color: #fff;
   border: none;
   border-radius: 5px;
-  color: var(--text-color-green);
+  font-size: 20px;
+}
+
+#notices ul li .news li div button:hover {
+  font-weight: bold;
+  box-shadow: 0px 0px 5px black;
 }
 
 #notices ul li .news li img {
@@ -108,11 +182,16 @@ section > p {
   object-fit: cover;
 }
 
+#notices ul li .news li:hover img {
+  filter: brightness(1.05);
+}
+
+/* notibtn 가운데 정렬 */
 #notices ul li {
   text-align: center;
 }
 
-#notices ul li > button {
+#notices ul li .notibtn {
   margin: 3%;
   width: 20%;
   height: 50px;
@@ -124,6 +203,18 @@ section > p {
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  transition-delay: 1.2s;
+}
+
+#notices.scon ul li .notibtn {
+  opacity: 1;
+}
+
+#notices ul li .notibtn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0px 0px 5px var(--text-color-dred);
 }
 
 /* event */
@@ -131,82 +222,430 @@ section > p {
   margin-bottom: 150px;
 }
 
-.ebanner {
+#event .ebanner {
   margin: 10% 0 0;
   border: 3px solid var(--point-color-yellow);
   border-left: none;
   border-right: none;
 }
 
-.ebanner:hover img {
+#event .ebanner li {
+  opacity: 0;
+  transform: translateY(150%);
+  transition: transform 1s;
+}
+
+#event.scon .ebanner li {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+#event .ebanner:hover img {
   filter: brightness(1.2);
   box-shadow: 0px 0px 5px var(--text-color-green);
 }
 
-.ebanner li:first-child {
+#event .ebanner li:first-child a {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.ebanner li h3 {
-  font-size: 30px;
+#event .ebanner li a h3 {
+  padding: 15px 5px;
+  border-bottom: 5px double transparent;
+  letter-spacing: 1px;
+  font-size: 35px;
   color: var(--text-color-green);
-  text-shadow: 10px 10px 10px #ccc;
 }
 
-.ebanner li div {
+#event .ebanner:hover li a h3 {
+  border-bottom: 5px double var(--point-color-ygreen);
+}
+
+#event .ebanner li div {
   width: 50%;
   margin-top: -3%;
   display: flex;
   gap: 5%;
 }
 
-.ebanner li div img {
+#event .ebanner li div img {
   width: calc(95% / 2);
   border-radius: 5px;
 }
 
-.ebanner li:last-child {
+#event .ebanner li:last-child {
   padding: 5%;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
-.elist {
+#event .elist {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.elist li {
+#event .elist li {
   padding: 1%;
   width: 50%;
   border-bottom: 3px solid var(--point-color-yellow);
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
+  overflow: hidden;
 }
 
-.elist li:hover img {
+#event .elist li a {
+  display: flex;
+  align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.7s;
+  transition-delay: 0.3s;
+}
+
+#event.scon .elist li a {
+  transform: translateY(0%);
+}
+
+#event .elist li:hover img {
   filter: brightness(1.2);
   box-shadow: 0px 0px 5px var(--text-color-green);
 }
 
-.elist li img {
+#event .elist li img {
   border-radius: 5px;
 }
 
-.elist li div {
+#event .elist li div {
+  width: calc(100% - 150px);
   padding: 0 3%;
+  box-sizing: border-box;
 }
 
-.elist li h4 {
+#event .elist li h4 {
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+  border-bottom: 2px dashed #ccc;
   color: var(--text-color-green);
   font-size: 23px;
-  line-height: 50px;
 }
 
-.elist li p {
+#event .elist li:hover h4 {
+  text-shadow: 0px 0px 1px #aaa;
+  border-bottom: 2px dashed var(--text-color-green);
+}
+
+#event .elist li p {
   font-size: 18px;
+  line-height: 23px;
+  color: #555;
+}
+
+#event .elist li:hover p {
+  color: #222;
+}
+
+/* 반응형 */
+/* -------------pc------------ */
+@media (min-width: 1200px) {
+}
+
+/* -------------tap------------ */
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* visual */
+  #visual {
+    height: 35vh;
+  }
+
+  #visual img {
+    animation: nvi 0.6s linear;
+  }
+
+  /* section */
+  section > p {
+    font-size: 16px;
+  }
+
+  /* notices */
+  #notices > ul {
+    margin-top: 5%;
+    height: 1300px;
+  }
+
+  #notices ul li .news li {
+    transition: transform 0.4s;
+  }
+
+  #notices ul li .news li a {
+    height: 350px;
+  }
+
+  #notices ul li .news li:nth-child(2) {
+    margin: 5% 0;
+    transition-delay: 0.2s;
+  }
+
+  #notices ul li .news li:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+
+  #notices ul li .news li div {
+    width: calc(100% - 350px);
+    padding: 0 4%;
+  }
+
+  #notices ul li .news li div h3 {
+    font-size: 25px;
+    word-break: break-all;
+    text-align: justify;
+  }
+
+  #notices ul li .news li div .ncontent {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #notices ul li .news li div button {
+    font-size: 18px;
+  }
+
+  #notices ul li .news li img {
+    width: 350px;
+  }
+
+  #notices ul li .notibtn {
+    margin: 5%;
+    width: 25%;
+    height: 40px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    transition-delay: 0.9s;
+  }
+
+  /* event */
+  #event {
+    margin-bottom: 100px;
+  }
+
+  #event .ebanner {
+    margin: 8% 0 0;
+  }
+
+  #event .ebanner li {
+    transition: transform 0.7s;
+  }
+
+  #event .ebanner li a h3 {
+    padding: 15px 10px;
+    font-size: 25px;
+  }
+
+  #event .ebanner li div {
+    margin-top: -4%;
+    gap: 4%;
+  }
+
+  #event .ebanner li:last-child {
+    padding: 5%;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  #event .elist li a {
+    transition: transform 0.6s;
+  }
+
+  #event .elist li img {
+    width: 130px;
+  }
+
+  #event .elist li div {
+    width: calc(100% - 130px);
+  }
+
+  #event .elist li h4 {
+    padding-bottom: 3%;
+    margin-bottom: 4%;
+    font-size: 20px;
+  }
+
+  #event .elist li p {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+/* ---------mobile---------- */
+@media (max-width: 768px) {
+  /* visual */
+  #visual {
+    height: 25vh;
+  }
+
+  #visual a {
+    gap: 1.5%;
+  }
+
+  #visual img {
+    width: 35%;
+    animation: nvi 0.6s linear;
+  }
+
+  /* section */
+  section h2 {
+    margin-bottom: 10px;
+  }
+
+  section > p {
+    padding: 0 5%;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  /* notices */
+  #notices > ul {
+    margin-top: 10%;
+    height: 1100px;
+  }
+
+  #notices ul li .news li:hover a {
+    text-shadow: 2px 2px 2px black;
+  }
+
+  #notices ul li .news li a {
+    height: 300px;
+    position: relative;
+  }
+
+  #notices ul li .news li:nth-child(2) {
+    margin: 5% 0;
+    transition-delay: 0.2s;
+  }
+
+  #notices ul li .news li:nth-child(3) {
+    transition-delay: 0.5s;
+  }
+
+  #notices ul li .news li div {
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 8;
+  }
+
+  #notices ul li .news li div h3 {
+    font-size: 23px;
+  }
+
+  #notices ul li .news li:hover h3 {
+    text-shadow: 2px 2px 2px black;
+  }
+
+  #notices ul li .news li div .ncontent {
+    font-size: 16px;
+  }
+
+  #notices ul li .news li div button {
+    display: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  #notices ul li .news li img {
+    width: 100%;
+    height: 80%;
+    filter: brightness(0.6);
+  }
+
+  #notices ul li .notibtn {
+    margin: 5%;
+    width: 40%;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  /* event */
+  #event {
+    margin-bottom: 80px;
+  }
+
+  #event .ebanner li {
+    transform: translateY(100%);
+    transition: transform 0.6s;
+  }
+
+  #event .ebanner li:first-child a {
+    flex-direction: column-reverse;
+  }
+
+  #event .ebanner li a h3 {
+    padding: 5% 0px 10px;
+    border-bottom: 3px solid transparent;
+    font-size: 23px;
+  }
+
+  #event .ebanner:hover li a h3 {
+    border-bottom: 3px dashed var(--point-color-ygreen);
+  }
+
+  #event .ebanner li div {
+    width: 80%;
+    margin-top: -5%;
+  }
+
+  #event .ebanner li:last-child {
+    margin-top: 1%;
+    padding: 3%;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  #event .elist li {
+    padding: 3% 1%;
+    width: 100%;
+  }
+
+  #event .elist li:nth-child(1) a {
+    transition-delay: 0.6s;
+  }
+
+  #event .elist li:nth-child(2) a {
+    transition-delay: 0.8s;
+  }
+
+  #event .elist li:nth-child(3) a {
+    transition-delay: 1s;
+  }
+
+  #event .elist li:nth-child(4) a {
+    transition-delay: 1.2s;
+  }
+
+  #event .elist li img {
+    width: 120px;
+  }
+
+  #event .elist li div {
+    width: calc(100% - 120px);
+    padding: 0 5%;
+  }
+
+  #event .elist li h4 {
+    padding-bottom: 4%;
+    margin-bottom: 5%;
+    font-size: 16px;
+  }
+
+  #event .elist li p {
+    font-size: 12px;
+    line-height: 23px;
+    color: #222;
+  }
 }

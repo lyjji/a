@@ -322,7 +322,6 @@
 /* best */
 #best h2 {
   padding-bottom: 3vh;
-  border-bottom: 3px solid var(--point-color-yellow);
 }
 
 #best ul {

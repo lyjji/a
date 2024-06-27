@@ -1,0 +1,212 @@
+@charset "utf-8";
+/* visual */
+#visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* section */
+section h2 {
+  margin-bottom: 20px;
+  color: var(--text-color-dred);
+  text-shadow: 0 0 2px var(--text-color-dred);
+}
+
+section > p {
+  color: var(--text-color-dred);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* notices */
+#notices {
+  padding: 0;
+}
+
+#notices > ul {
+  margin-top: 3%;
+  width: 100%;
+  height: 1500px;
+  position: relative;
+}
+
+#notices > ul > li:first-child {
+  position: relative;
+  top: 3%;
+  /* transform: translateY(-50%); */
+  z-index: 6;
+}
+
+#notices > ul > li:last-child {
+  width: 90%;
+  height: 100%;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#notices ul li .news li {
+  height: 400px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#notices ul li .news li:nth-child(1) {
+  background-color: rgb(204, 0, 0, 80%);
+}
+
+#notices ul li .news li:nth-child(2) {
+  margin: 3% 0;
+  flex-direction: row-reverse;
+  background-color: rgb(242, 183, 5, 80%);
+}
+
+#notices ul li .news li:nth-child(3) {
+  background-color: rgb(13, 52, 47, 80%);
+}
+
+#notices ul li .news li div {
+  width: 70%;
+  padding: 0 5%;
+  box-sizing: border-box;
+  text-align-last: left;
+}
+
+#notices ul li .news li div h3 {
+  margin-bottom: 10x;
+  font-size: 30px;
+  text-shadow: 0px 0px 2px var(--text-color-green);
+}
+
+#notices ul li .news li div p {
+  margin-bottom: 5px;
+}
+
+#notices ul li .news li div .ncontent {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#notices ul li .news li div button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color-green);
+}
+
+#notices ul li .news li img {
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+}
+
+#notices ul li {
+  text-align: center;
+}
+
+#notices ul li > button {
+  margin: 3%;
+  width: 20%;
+  height: 50px;
+  background-color: var(--point-color-pink);
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+/* event */
+#event {
+  margin-bottom: 150px;
+}
+
+.ebanner {
+  margin: 10% 0 0;
+  border: 3px solid var(--point-color-yellow);
+  border-left: none;
+  border-right: none;
+}
+
+.ebanner:hover img {
+  filter: brightness(1.2);
+  box-shadow: 0px 0px 5px var(--text-color-green);
+}
+
+.ebanner li:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ebanner li h3 {
+  font-size: 30px;
+  color: var(--text-color-green);
+  text-shadow: 10px 10px 10px #ccc;
+}
+
+.ebanner li div {
+  width: 50%;
+  margin-top: -3%;
+  display: flex;
+  gap: 5%;
+}
+
+.ebanner li div img {
+  width: calc(95% / 2);
+  border-radius: 5px;
+}
+
+.ebanner li:last-child {
+  padding: 5%;
+  font-size: 18px;
+}
+
+.elist {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.elist li {
+  padding: 1%;
+  width: 50%;
+  border-bottom: 3px solid var(--point-color-yellow);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.elist li:hover img {
+  filter: brightness(1.2);
+  box-shadow: 0px 0px 5px var(--text-color-green);
+}
+
+.elist li img {
+  border-radius: 5px;
+}
+
+.elist li div {
+  padding: 0 3%;
+}
+
+.elist li h4 {
+  color: var(--text-color-green);
+  font-size: 23px;
+  line-height: 50px;
+}
+
+.elist li p {
+  font-size: 18px;
+}

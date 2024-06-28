@@ -55,26 +55,30 @@ let mpbanner = document.querySelector(".packbanner");
 let mpacks = document.querySelector(".mpacks");
 let mmerch = document.querySelector("#mmerch");
 
-window.addEventListener("scroll", () => {
-  //   현재 위치
-  let sc = document.documentElement.scrollTop;
+window.addEventListener(
+  "scroll",
+  () => {
+    //   현재 위치
+    let sc = document.documentElement.scrollTop;
 
-  //   pack 배너
-  let packT = mpack.offsetTop - 200;
-  let pbannerT = mpbanner.offsetTop;
-  let merchT = mmerch.offsetTop;
+    //   pack 배너
+    let packT = mpack.offsetTop - 200;
+    let pbannerT = mpbanner.offsetTop;
+    let merchT = mmerch.offsetTop;
 
-  if (packT <= sc && sc < merchT) {
-    mpack.classList.add("scon");
-    // mmerch.classList.add("scon");
-  } else {
-    mpack.classList.remove("scon");
-    // mmerch.classList.remove("scon");
-  }
+    if (packT <= sc && sc < merchT) {
+      mpack.classList.add("scon");
+      // mmerch.classList.add("scon");
+    } else {
+      mpack.classList.remove("scon");
+      // mmerch.classList.remove("scon");
+    }
 
-  if (pbannerT < sc) {
-    mmerch.classList.add("scon");
-  } else {
-    mmerch.classList.remove("scon");
-  }
-});
+    if (pbannerT < sc) {
+      mmerch.classList.add("scon");
+    } else {
+      mmerch.classList.remove("scon");
+    }
+  },
+  { passive: true }
+);

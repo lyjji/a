@@ -1,11 +1,13 @@
 @charset "utf-8";
 /* visual */
 #visual {
+  height: 60vh;
   position: relative;
 }
 
 #visual img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -346,6 +348,10 @@ section > p {
 /* ------------------tap-------------------*/
 @media (min-width: 768px) and (max-width: 1200px) {
   /* visual */
+  #visual {
+    height: 35vh;
+  }
+
   #visual h2 {
     margin: 0 3%;
     font-size: 30px;
@@ -445,6 +451,10 @@ section > p {
 /* ------------------mobile-------------------*/
 @media (max-width: 768px) {
   /* visual */
+  #visual {
+    height: 25vh;
+  }
+
   #visual h2 {
     margin: 0 2%;
     font-size: 16px;

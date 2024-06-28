@@ -3,22 +3,26 @@ let mbar = document.querySelector("#mbar");
 let visual = document.querySelector("#visual");
 
 // 스크롤 다운 시
-window.addEventListener("scroll", () => {
-  //  현재 스크롤 위치
-  let sc = document.documentElement.scrollTop;
-  // console.log(sc);
+window.addEventListener(
+  "scroll",
+  () => {
+    //  현재 스크롤 위치
+    let sc = document.documentElement.scrollTop;
+    // console.log(sc);
 
-  // 스크롤 다운 헤더
-  let vScon = visual.offsetTop;
+    // 스크롤 다운 헤더
+    let vScon = visual.offsetTop;
 
-  if (vScon < sc) {
-    head.classList.add("scdown");
-    mbar.classList.add("scdown");
-  } else {
-    head.classList.remove("scdown");
-    mbar.classList.remove("scdown");
-  }
-});
+    if (vScon < sc) {
+      head.classList.add("scdown");
+      mbar.classList.add("scdown");
+    } else {
+      head.classList.remove("scdown");
+      mbar.classList.remove("scdown");
+    }
+  },
+  { passive: true }
+);
 
 // width 768px 초과일 때 mbar에 .on 지우기
 const checkw = () => {
@@ -33,6 +37,7 @@ let scTop = () => {
   document.documentElement.scrollTop = 0;
 };
 
+window.addEventListener("beforeunload", scTop);
 window.addEventListener("resize", scTop);
 window.addEventListener("resize", checkw);
 

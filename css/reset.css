@@ -94,11 +94,6 @@ header ul li:hover {
   font-weight: bold;
 }
 
-header ul li:not(:last-child).on {
-  color: var(--point-color-bred);
-  font-weight: bold;
-}
-
 header ul li:last-child {
   padding: 10px;
   box-sizing: border-box;
@@ -107,6 +102,13 @@ header ul li:last-child {
   border-radius: 5px;
   font-size: 18px;
   color: #fff;
+}
+
+header ul li:last-child.on {
+  background-color: #fff;
+  color: var(--point-color-red);
+  font-weight: bold;
+  box-shadow: 0px 0px 2px var(--point-color-pink);
 }
 
 header.scdown ul li:last-child {

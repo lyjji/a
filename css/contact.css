@@ -1,3 +1,333 @@
 @charset "utf-8";
 
 /* visual */
+#visual {
+  height: 60vh;
+  position: relative;
+}
+
+#visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  filter: brightness(0.8);
+}
+
+#visual p {
+  width: 90%;
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-align: center;
+  word-break: keep-all;
+  color: #fff;
+  text-shadow: 0px 0px 2px var(--text-color-green);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: vip 0.5s;
+}
+
+@keyframes vip {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+#visual:hover img {
+  filter: brightness(1);
+}
+
+#visual:hover p {
+  text-shadow: 0px 0px 3px var(--text-color-green);
+  font-weight: bold;
+}
+
+/* conus */
+#conus ul {
+  border: 3px solid var(--text-color-green);
+  border-left: none;
+  border-right: none;
+}
+
+#conus ul li {
+  padding: 5% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  transition: opacity 0.8s linear, margin 0.8s linear;
+}
+
+#conus.scon ul li {
+  margin: 0 !important;
+  opacity: 1 !important;
+}
+
+#conus ul li:not(:first-child) {
+  margin-top: -20%;
+  border-top: 3px solid var(--text-color-green);
+  opacity: 0;
+}
+
+#conus ul li div h4 {
+  margin-bottom: 5%;
+  font-size: 35px;
+}
+
+#conus ul li div p {
+  margin-top: 2%;
+  padding: 0 5%;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--text-color-green);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+#conus ul li i {
+  font-size: 150px;
+}
+
+/* con2 */
+
+#con2 {
+  padding: 50px 50px 150px;
+  background-color: var(--point-color-red);
+  display: flex;
+  justify-content: space-around;
+}
+
+#con2 h3 {
+  margin-bottom: 25px;
+  padding: 5px;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-size: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px var(--text-color-dred);
+}
+
+#con2 > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(50%);
+  transition: transform 0.4s;
+  transition-delay: 0.4s;
+}
+
+#con2.scon > div {
+  transform: translateY(0%);
+}
+
+#con2 .csns {
+  width: 40%;
+}
+
+#con2 .csns div {
+  padding: 6%;
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff94;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6%;
+}
+
+#con2 .csns a {
+  display: block;
+  width: 47%;
+  height: 47%;
+}
+
+#con2 .csns div img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+#con2 .cmap {
+  width: 50%;
+}
+
+#con2 .cmap iframe {
+  width: 90%;
+  border-radius: 15px;
+}
+
+/* 반응형 */
+/* -----------pc---------- */
+@media (min-width: 1200px) {
+}
+
+/* -----------tap----------- */
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* visual */
+  #visual {
+    height: 35vh;
+  }
+
+  #visual p {
+    width: 80%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  /* conus */
+
+  #conus ul li {
+    padding: 5% 15%;
+    justify-content: space-between;
+    transition: opacity 0.6s linear, margin 0.6s linear;
+  }
+
+  #conus ul li div h4 {
+    margin-bottom: 6%;
+    font-size: 30px;
+  }
+
+  #conus ul li div p {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  #conus ul li i {
+    width: 163px;
+    font-size: 130px;
+    text-align: center;
+  }
+
+  /* con2 */
+
+  #con2 {
+    padding: 30px 30px 80px;
+  }
+
+  #con2 h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  #con2 .csns {
+    width: 30%;
+  }
+
+  #con2 .csns div {
+    width: 200px;
+    height: 200px;
+  }
+
+  #con2 .csns a {
+    width: 45%;
+    height: 45%;
+  }
+
+  #con2 .cmap {
+    width: 55%;
+  }
+
+  #con2 .cmap iframe {
+    height: 250px;
+  }
+}
+
+/* -----------mobile---------- */
+@media (max-width: 768px) {
+  /* visual */
+  #visual {
+    height: 25vh;
+  }
+
+  #visual p {
+    width: 80%;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  /* conus */
+  #conus ul li {
+    flex-direction: column-reverse;
+    gap: 0%;
+    transition: opacity 0.4s linear, margin 0.4s linear;
+  }
+
+  #conus ul li > div {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  #conus ul li div h4 {
+    margin: 5% 0 3%;
+    font-size: 20px;
+  }
+
+  #conus ul li div p {
+    width: auto;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+
+  #conus ul li i {
+    font-size: 80px;
+  }
+
+  /* con2 */
+
+  #con2 {
+    padding: 15px 15px 80px;
+    display: block;
+  }
+
+  #con2 h3 {
+    width: 90%;
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  #con2 .csns {
+    width: 100%;
+  }
+
+  #con2 .csns div {
+    padding: 5%;
+    width: 75vw;
+    height: 100%;
+    gap: 0%;
+  }
+
+  #con2 .csns a {
+    width: 20%;
+    display: flex;
+    align-items: center;
+  }
+
+  #con2 .cmap {
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  #con2 .cmap iframe {
+    width: 90%;
+    height: 25vh;
+  }
+}

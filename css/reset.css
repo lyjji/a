@@ -104,6 +104,11 @@ header ul li:last-child {
   color: #fff;
 }
 
+header ul li:not(:last-child).on {
+  color: var(--point-color-pink);
+  font-weight: bold;
+}
+
 header ul li:last-child.on {
   background-color: #fff;
   color: var(--point-color-red);

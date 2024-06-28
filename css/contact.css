@@ -129,7 +129,7 @@
   align-items: center;
   transform: translateY(50%);
   transition: transform 0.4s;
-  transition-delay: 0.4s;
+  transition-delay: 0.7s;
 }
 
 #con2.scon > div {

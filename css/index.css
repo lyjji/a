@@ -561,7 +561,7 @@
   #visual {
     margin-top: 88px;
     padding: 0 25px;
-    height: 65vh;
+    height: 55vh;
   }
 
   #visual .vi li {
@@ -585,7 +585,7 @@
   }
 
   #visual .vi li p {
-    margin: 5%;
+    margin: 8% 5%;
     font-size: 40px;
     line-height: 45px;
   }
@@ -793,9 +793,10 @@
 
   #visual .vi li p {
     margin: 5%;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 30px;
   }
+
   #visual .vinav li {
     height: 3px;
   }
